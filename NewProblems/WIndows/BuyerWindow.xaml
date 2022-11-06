@@ -1,0 +1,19 @@
+﻿<Window x:Class="NewProblems.WIndows.BuyerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewProblems.WIndows"
+        mc:Ignorable="d"
+        Title="BuyerWindow" Height="450" Width="800">
+    <Grid Background="#FFA8B78B">
+        <StackPanel Margin="168,96,122,114">
+            <DataGrid x:Name="DataGrid_buyer" Height="224" Background="#FF7B7B7B"/>
+        </StackPanel>
+        <DockPanel LastChildFill="False" Margin="0,0,0,343" Background="#FF191919"/>
+        <Button Content="Button" Margin="438,26,245,369"/>
+        <Button Content="Button" Margin="259,28,414,369"/>
+
+
+    </Grid>
+</Window>

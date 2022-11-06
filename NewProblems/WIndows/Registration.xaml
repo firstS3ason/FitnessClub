@@ -1,0 +1,39 @@
+﻿<Window x:Class="NewProblems.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewProblems"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF3A3838" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DataGrid x:Name="UsersdataGrid" Margin="180,28,180,165" BorderBrush="#FF8C8C8C" Background="#FF1B1B1B" ColumnWidth="*">
+            <DataGrid.Columns>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="add_btn" Content="Add" HorizontalAlignment="Left" Margin="329,269,0,0" VerticalAlignment="Top" Height="41" Width="57" Click="add_btn_Click"/>
+        <Button x:Name="delete_btn" Content="Delete" HorizontalAlignment="Left" Margin="241,269,0,0" VerticalAlignment="Top" Height="41" Width="57" Click="delete_btn_Click"/>
+        <Button x:Name="update_btn" Content="Update" HorizontalAlignment="Left" Margin="424,269,0,0" VerticalAlignment="Top" Height="41" Width="58" Click="update_btn_Click"/>
+        <Button x:Name="clearing_btn" Content="ClearTxts" HorizontalAlignment="Left" Margin="515,269,0,0" VerticalAlignment="Top" Height="41" Width="57" Click="clearing_btn_Click"/>
+        <TextBox x:Name="login_txt" HorizontalAlignment="Left" Margin="266,315,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="password_txt" HorizontalAlignment="Left" Margin="424,315,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="combo_box" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Administrator"/>
+            <ComboBoxItem Content="Coach"/>
+            <ComboBoxItem Content="Buyer"/>
+        </ComboBox>
+        <TextBox x:Name="id_txt" HorizontalAlignment="Center" Margin="0,365,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="61"/>
+        <Button Content="Return" HorizontalAlignment="Center" Margin="0,388,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label x:Name="id_lb" Content="Id" HorizontalAlignment="Left" Margin="337,361,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="login_label" Content="Login" HorizontalAlignment="Left" Margin="222,311,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="password_label" Content="Password" HorizontalAlignment="Left" Margin="544,311,0,0" VerticalAlignment="Top" Foreground="White"/>
+
+    </Grid>
+</Window>
