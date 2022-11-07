@@ -20,8 +20,7 @@ namespace NewProblems.Models
 
         public string? Permissions { get; set; }
 
-
-
       
     }
+  
 }

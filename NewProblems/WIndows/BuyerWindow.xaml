@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:NewProblems.WIndows"
         mc:Ignorable="d"
         Title="BuyerWindow" Height="450" Width="800">
-    <Grid Background="#FFA8B78B">
+    <Grid Background="#FF312240">
         <StackPanel Margin="168,96,122,114">
             <DataGrid x:Name="DataGrid_buyer" Height="224" Background="#FF7B7B7B"/>
         </StackPanel>
-        <DockPanel LastChildFill="False" Margin="0,0,0,343" Background="#FF191919"/>
-        <Button Content="Button" Margin="438,26,245,369"/>
-        <Button Content="Button" Margin="259,28,414,369"/>
+        <DockPanel LastChildFill="False" Margin="0,0,0,343" Background="#FF333333"/>
+        <Button Content="Choose" Margin="438,26,245,369"/>
+        <Button Content="SendRequest" Margin="259,28,414,369"/>
 
 
     </Grid>

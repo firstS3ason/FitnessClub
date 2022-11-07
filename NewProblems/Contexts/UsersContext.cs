@@ -21,40 +21,40 @@ namespace NewProblems.Contexts
     public class UsersContext : DbContext // Для использования методов, конструкторов и свойств ниже, мы воссоздаем наследование от данного класса.
     {
         public DbSet<Users> Users { get; set; } = null!;
-
-      
-
+        public DbSet<CoachInvites> CoachInvites { get; set; } = null!;
         public UsersContext() => Database.EnsureCreated();
-
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
             optionBuilder.UseSqlServer(@"Data Source=OnlyMyself\YAYA;Database=Fitnesss;Integrated Security=True;");
         }
 
-        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
+      protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
               base.OnModelCreating(modelBuilder);
+            
 
-              modelBuilder.Entity<Users>().HasData(new Users()
-              {
-                  ID = 1
-                  Login = "Hello",
-                  Password = "Here2",
-                  Permissions = "Zero"
+            modelBuilder.Entity<CoachInvites>().HasData(new CoachInvites()
+            {
+                ID = 1,
+                CoachName = "He",
+                RequestStatus = "E"
+            });
+
+           
+            
 
 
-              }) ;
 
-
-        }*/
-
-     
+        }
 
         public IQueryable<Users> GetAll()
         {
             return Users;
+
         }
 
-
+     
+     
     }
 }

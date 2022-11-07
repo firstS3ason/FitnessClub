@@ -7,4 +7,5 @@ Finish creating a windows, inside and outside parts,
 Clean up in mine bunker-code,
 Prepare written elements to future editing.
 
-Connected project with repository – 06.11.2022
+Connected project with repositori – 06.11.2022
+"CoachInvites" were added - 07.11.2022
