@@ -1,62 +1,73 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Net;
-using System.Reflection.Metadata;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 using NewProblems.Contexts;
 using NewProblems.Models;
-using NewProblems.WIndows;
 
 namespace NewProblems
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-   
+
     ///  _db.Database.EnsureCreated();
     ///  Users polzovatel1 = new Users { Login = "Anton", Password = "NeGena", Permissions = "Zero" }; 
     ///  _db.Users.AddRange(polzovatel1);_db.SaveChanges();
+    ///   CoachInvites _becomePartners = (from i in context.CoachInvites where i.CoachName == CoachName select i).FirstOrDefault();
     ///  using (UsersContext _db = new UsersContext()) {Инструкции, что доступны} // создаем метку в сторону класса, на основе которого и создается экземпляр.
 
 
     public partial class MainWindow : Window
     {
-       static public UsersContext _db = new UsersContext();
+        private readonly UsersContext _db = new UsersContext();
+        public static string? AdminIn { get; set; }
+        public static string? PlacingInto_AdminIn
+        {
+            get
+            {
+                return AdminIn;
+            }
+            set
+            {
+                if (value == "Administrator")
+                {
+                    value = "Yes";
+                    AdminIn = value;
+                }
+                else
+                {
+                    value = "No";
+                    AdminIn = value;
+                }
+            }
+        }
 
-       public MainWindow()
+        public MainWindow()
        {
-
             InitializeComponent();
-            DbLoad();
+            DbLoad(_db);
             
+            if (AdminIn == "Yes")
+            {
+
+            }
        }
 
-
-        public void ClearingTxts()
+        private void ClearingTxts()
         {
             password_txt.Clear();
             login_txt.Clear();
-            id_txt.Clear();
+            
         }
-        public void DbLoad()
+
+        private void DbLoad(UsersContext context)
         {
-            UsersdataGrid.ItemsSource = _db.GetAll().ToList();
+            UsersdataGrid.ItemsSource = context.GetAll().ToList();
         }
-        public bool TxtHaveInfo()
+
+        private bool TxtHaveInfo()
         {
             if (combo_box.SelectedItem != null &&
                 password_txt.Text != "" &&
@@ -91,8 +102,8 @@ namespace NewProblems
 
                     _db.Users.Add(potentialUser);
                     _db.SaveChanges();
-
-                    DbLoad();
+                    
+                    DbLoad(_db);
                     ClearingTxts();
                 }
             }
@@ -106,15 +117,20 @@ namespace NewProblems
         {
             try
             {
-                if (HaveId())
+                if (UsersdataGrid.SelectedItem != null) //заменить на значение, из себя строку пустующую на территории ДатаГрид что расположена.) 
                 {
                     int elementID = (UsersdataGrid.SelectedItem as Users).ID;
-                    Users user = (from r in _db.Users where r.ID == elementID select r).FirstOrDefault();
+                    var user = _db.Users.Where(r => r.ID == elementID).FirstOrDefault();
+
                     _db.Users.Remove(user);
                     _db.SaveChanges();
 
-                    DbLoad();
+                    DbLoad(_db);
                     ClearingTxts();
+                }
+                else
+                {
+                    MessageBox.Show("Выделите строку, содержащую информацию, избавиться от которой Вы желаете.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)
@@ -123,18 +139,8 @@ namespace NewProblems
             }
         }
 
-        public bool HaveId()
-        {
-            if (id_txt.Text != "")
-            {
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("Уточните, поле с каким индектификатором Вы желаете изменить", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
-            }
-        }
+       
+
         private void update_btn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -146,7 +152,7 @@ namespace NewProblems
                     var content = (string)item.Content;
 
                     int elementID = (UsersdataGrid.SelectedItem as Users).ID;
-                    Users user = (from r in _db.Users where r.ID == elementID select r).FirstOrDefault();
+                    var user = _db.Users.Where(r => r.ID == elementID).FirstOrDefault();
 
                     user.Login = login_txt.Text;
                     user.Password = password_txt.Text;
@@ -155,7 +161,7 @@ namespace NewProblems
                     _db.Users.Update(user);
                     _db.SaveChanges();
 
-                    DbLoad();
+                    DbLoad(_db);
                     ClearingTxts();
                 }
             }
@@ -163,7 +169,6 @@ namespace NewProblems
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void clearing_btn_Click(object sender, RoutedEventArgs e)

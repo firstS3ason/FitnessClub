@@ -55,3 +55,11 @@ C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows
 C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\Authrorization.baml
 C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\BuyerWindow.g.cs
 C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\BuyerWindow.baml
+C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\CoachWindow.g.cs
+C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\CoachWindow.baml
+C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\InteractingToCoach.g.cs
+C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\InteractingToCoach.baml
+C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\Calendar_ChooseDate.g.cs
+C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\Calendar_ChooseDate.baml
+C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\ProgramCreating_Coach.g.cs
+C:\Users\Season\Desktop\NewProblems\NewProblems\obj\Debug\net6.0-windows\WIndows\ProgramCreating_Coach.baml

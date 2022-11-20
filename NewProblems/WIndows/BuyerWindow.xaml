@@ -6,13 +6,67 @@
         xmlns:local="clr-namespace:NewProblems.WIndows"
         mc:Ignorable="d"
         Title="BuyerWindow" Height="450" Width="800">
-    <Grid Background="#FF312240">
-        <StackPanel Margin="168,96,122,114">
-            <DataGrid x:Name="DataGrid_buyer" Height="224" Background="#FF7B7B7B"/>
-        </StackPanel>
-        <DockPanel LastChildFill="False" Margin="0,0,0,343" Background="#FF333333"/>
-        <Button Content="Choose" Margin="438,26,245,369"/>
-        <Button Content="SendRequest" Margin="259,28,414,369"/>
+
+    
+    <Grid Background="#FF2A2A2B">
+
+        <TabControl Background="#FF6D2727" BorderBrush="#00ACACAC">
+
+            <TabItem Header="InvitesList" Background="#FFB54545" BorderBrush="#FF3E3B3B">
+                <DataGrid  AutoGenerateColumns="False" x:Name="DataGrid_buyer" Height="224" ColumnWidth="*"  Background="#FF5F3131" Margin="186,91,62,119" BorderBrush="#00688CAF">
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Delete" Click="Delete_btn_Click"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                        <DataGridTextColumn Header="CoachName" Binding="{Binding CoachName}"/>
+                        <DataGridTextColumn Header="RequestStatus" Binding="{Binding RequestStatus}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="CoachesCategory" Background="#FFB54545" BorderBrush="#FF3E3B3B">
+
+                <DataGrid x:Name="DataGrid_Coaches" Height="279" ColumnWidth="*" Background="#FF5F3131" Margin="186,91,62,119" BorderBrush="#FF343638">
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Send request to become partners" Click="Button_Click"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem x:Name="admin_category" Header="AdminMenu" Background="#FFB54545" BorderBrush="#FF3E3B3B">
+                <DataGrid x:Name="Admin_coaches_grid" ColumnWidth ="*" Background="#FF5F3131" Margin="187,91,61,119" BorderBrush="#00688CAF">>
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="delete" Click="Delete_btn_Click"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Program" Background="#FFB54545" BorderBrush="#FF3E3B3B">
+                <DataGrid x:Name="Trainings_dataGrid" Margin="302,0,0,149"/>
+            </TabItem>
+
+
+        </TabControl>
+        <Calendar x:Name="calendar" Margin="5,24,620,265" Foreground="Black" Background="#FFD2D2D2">
+            <Calendar.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#002486CE" Offset="1"/>
+                </LinearGradientBrush>
+            </Calendar.BorderBrush>
+        </Calendar>
+        <DockPanel LastChildFill="False" Margin="0,333,0,38" Background="#FF292828"/>
+        <Button x:Name="redactCoachList_btn" Content="Redact coachList" Margin="123,333,527,38" Background="#FF652121" BorderBrush="#00230909" Foreground="White" Click="redactCoachList_btn_Click"/>
+        <Button x:Name="redactInvitesList_btn" Content="Redact invites lists" Margin="298,333,352,38" Background="#FF652121" BorderBrush="#00230909" Foreground="White" Click="redactInvitesList_btn_Click"/>
+        <Button x:Name="CloseThirdTab_btn" Content="Close third tab" Margin="475,333,175,38" Background="#FF652121" BorderBrush="#00230909" Foreground="White" Click="CloseThirdTab_btn_Click"/>
 
 
     </Grid>

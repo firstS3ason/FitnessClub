@@ -13,12 +13,36 @@
     <Compile Update="WIndows\BuyerWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WIndows\Calendar_ChooseDate.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WIndows\CoachWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WIndows\InteractingToCoach.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WIndows\ProgramCreating_Coach.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="WIndows\Authrorization.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WIndows\BuyerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WIndows\Calendar_ChooseDate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WIndows\CoachWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WIndows\InteractingToCoach.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WIndows\ProgramCreating_Coach.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WIndows\Registration.xaml">

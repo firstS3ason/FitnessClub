@@ -1,0 +1,58 @@
+﻿<Window x:Class="NewProblems.WIndows.CoachWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewProblems.WIndows"
+        mc:Ignorable="d"
+        Title="CoachWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl Background="#FF4E0202">
+            <TabItem Header="Requests" Background="#FF500808" Foreground="White" BorderBrush="#00ACACAC">
+                <DataGrid x:Name="dataGrid_requests" Margin="102,-5,110,139" ColumnWidth="*" Height="244" >
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Accept Request" Click="AcceptRqst"/>
+                            <MenuItem Header="Deni Request" Click="DeniRqst"/>
+                            <MenuItem Header="CreateProgram" Click="MenuItem_Click"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                    
+                </DataGrid>
+            </TabItem>
+
+
+            <TabItem Header="Coaches adding" Background="#FF500808" Foreground="White" BorderBrush="#00ACACAC">
+                <DataGrid AutoGenerateColumns="False" x:Name="Adm_add_coaches_grid" Margin="94,0,92,113" ColumnWidth="*" Height="260">
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem x:Name="adding_coach_MI" Header="Add new person" Click="adding_coach_MI_Click"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Refresh">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Name="Refresh_btn" Content="Refresh" Click="Refresh_btn_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="CoachId" Binding="{Binding CoachId}"/>
+                        <DataGridTextColumn Header="CoachName" Binding="{Binding CoachName}"/>
+                        <DataGridTextColumn Header="Age" Binding="{Binding Age}"/>
+                        <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"/>
+                        <DataGridTextColumn Header="YearsInStudyPractise" Binding="{Binding YearsInStudyPractise}"/>
+                        <DataGridTextColumn Header="InOurGymFrom" Binding="{Binding InOurGymFrom}"/>
+                        <DataGridTextColumn Header="SpecialistIn" Binding="{Binding SpecialistIn}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+            </TabItem>
+
+
+
+        </TabControl>
+          
+    </Grid>
+
+</Window>
